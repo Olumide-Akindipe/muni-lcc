@@ -75,4 +75,8 @@ See [CITATION.cff](CITATION.cff).
 ## License and maintainer
 
 Code: MIT ([LICENSE](LICENSE)). Documentation: CC BY 4.0.
-Maintainer: Stephen Olumide Akindipe, Independent Researcher, Albany, NY, USA. ORCID [0000-0002-1846-9662](https://orcid.org/0000-0002-1846-9662). Contributions welcome: [CONTRIBUTING.md](CONTRIBUTING.md). Support: [SUPPORT.md](SUPPORT.md). Governance: [GOVERNANCE.md](GOVERNANCE.md). Changes: [CHANGELOG.md](CHANGELOG.md).
+Maintainer: Stephen Olumide Akindipe, Independent Researcher, Albany, NY, USA. ORCID [0000-0002-1846-9662](https://orcid.org/0000-0002-1846-9662). 
+Contributions welcome: [CONTRIBUTING.md](CONTRIBUTING.md). 
+Support: [SUPPORT.md](SUPPORT.md). 
+Governance: [GOVERNANCE.md](GOVERNANCE.md). 
+Changes: [CHANGELOG.md](CHANGELOG.md).
