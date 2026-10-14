@@ -1,0 +1,16 @@
+{
+  "_comment": "Author block. README, CITATION.cff, paper, Zenodo creators, and commits read from here. Order is author order. Roles use CRediT terms.",
+  "authors": [
+    {
+      "name": "Stephen Olumide Akindipe",
+      "family": "Akindipe",
+      "given": "Stephen Olumide",
+      "orcid": "0000-0002-1846-9662",
+      "email": "oluakins1108@gmail.com",
+      "affiliation": "Independent Researcher, Albany, NY, USA",
+      "roles": ["Conceptualization", "Methodology", "Software", "Validation", "Writing - original draft"],
+      "corresponding": true
+    }
+  ],
+  "collaborators": []
+}

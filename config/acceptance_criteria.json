@@ -1,0 +1,15 @@
+{
+  "_about": "Option C baseline acceptance criteria. FEMP v5.0 values are used where FEMP states one; LBNL 2017 guidance fills the gaps. The project M&V plan governs and may set different targets (FEMP v5.0 Section 4.4 requires the plan to specify statistical validation targets).",
+  "min_r2": 0.75,
+  "max_abs_nmbe": 0.00005,
+  "min_abs_slope_t": 2.0,
+  "max_cv_rmse": 0.25,
+  "max_fsu": 0.50,
+  "sources": {
+    "min_r2": "FEMP M&V Guidelines v5.0 (September 2024), Section 5.3.4.1: IPMVP minimum acceptable R2 of 0.75",
+    "max_abs_nmbe": "FEMP M&V Guidelines v5.0, Section 5.3.4.1: ASHRAE Guideline 14 accepts net determination bias below 0.005 percent",
+    "min_abs_slope_t": "FEMP M&V Guidelines v5.0, Section 5.3.4.1: IPMVP specifies t-statistic greater than 2.0 for an independent variable",
+    "max_cv_rmse": "Not stated by FEMP v5.0 for Option C. LBNL (2017) guidance value citing ASHRAE Guideline 14. https://bies.lbl.gov/sites/default/files/acceptcriteria-doc-2017.pdf",
+    "max_fsu": "Not stated by FEMP v5.0. LBNL (2017) guidance value. https://bies.lbl.gov/sites/default/files/acceptcriteria-doc-2017.pdf"
+  }
+}

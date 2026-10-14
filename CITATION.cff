@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "MUNI-LCC: open life-cycle cost and measurement-and-verification toolkit for municipal energy projects"
+version: "0.1.0"
+date-released: "2026-10-14"
+authors:
+  - family-names: "Akindipe"
+    given-names: "Stephen Olumide"
+    orcid: "https://orcid.org/0000-0002-1846-9662"
+    affiliation: "Independent Researcher, Albany, NY, USA"
+license: MIT
+repository-code: "https://github.com/Olumide-Akindipe/muni-lcc"
+keywords:
+  - life-cycle cost analysis
+  - measurement and verification
+  - IPMVP
+  - FEMP
+  - ASTM E917
+  - municipal energy
+  - Uniform Guidance
+  - 2 CFR 200.329
