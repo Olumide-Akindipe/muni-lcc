@@ -2,7 +2,7 @@
 
 [![tests](https://github.com/Olumide-Akindipe/muni-lcc/actions/workflows/tests.yml/badge.svg)](https://github.com/Olumide-Akindipe/muni-lcc/actions/workflows/tests.yml)
 
-**Status: Released v0.1.0 (14 October 2026). Archived on Zenodo; the DOI is added here once Zenodo assigns it.**
+**Status: Released v0.1.0 (14 October 2026). DOI: [10.5281/zenodo.23362541](https://doi.org/10.5281/zenodo.23362541).**
 
 MUNI-LCC is a free, open toolkit that helps a city, town, village, or school district answer three questions about an energy project: were the intended energy savings achieved, was it a sound investment over its life cycle, and what does the federal performance report need to say about it. This toolkit implements IPMVP Options A and C as defined in the DOE FEMP M&V Guidelines v5.0 (which are based on IPMVP Core Concepts 2022), computes life-cycle cost consistent with ASTM E917, applies these methods the same way every time, shows its work, and produces performance report content aligned with 2 CFR 200.329.
 
@@ -68,7 +68,7 @@ MUNI-LCC produces verified content for a performance report. It does not replace
 
 ## Citation
 
-Akindipe, S. O. (2026). *MUNI-LCC: open life-cycle cost and measurement-and-verification toolkit for municipal energy projects* (Version 0.1.0) [Computer software]. GitHub. https://github.com/Olumide-Akindipe/muni-lcc
+Akindipe, S. O. (2026). *MUNI-LCC: open life-cycle cost and measurement-and-verification toolkit for municipal energy projects* (Version 0.1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23362541
 
 See [CITATION.cff](CITATION.cff).
 

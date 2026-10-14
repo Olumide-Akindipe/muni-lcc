@@ -1,1 +1,3 @@
 date,artifact_or_event,type,venue_or_host,link_or_doi,status,prong_tags,metrics_snapshot,files_saved,notes
+
+2026-10-14,MUNI-LCC v0.1.0,software release,GitHub; Zenodo,https://doi.org/10.5281/zenodo.23362542,published,prong1;prong2,"0 stars, 0 forks, 0 watching; Zenodo 0 views, 0 downloads at release (Zenodo service notice on download statistics, 2026-10-14)",2026-10-14_github_release_v0.1.0.pdf; 2026-10-14_zenodo_record_23362542.pdf,"Concept DOI 10.5281/zenodo.23362541; tag v0.1.0 at commit 921d7b4; CI tests passing; indexed in OpenAIRE; release republished after Zenodo integration was enabled"
