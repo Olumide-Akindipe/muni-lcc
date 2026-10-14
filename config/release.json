@@ -1,6 +1,6 @@
 {
   "_about": "Release metadata merged into the documents by scripts/render_docs.py. Set doi once Zenodo assigns it, then re-render.",
   "status": "Released v0.1.0 (14 October 2026)",
-  "doi": "",
+  "doi": "https://doi.org/10.5281/zenodo.23362541",
   "date_released": "2026-10-14"
 }
