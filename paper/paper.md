@@ -52,9 +52,6 @@ Uncertainty uses the ASHRAE Guideline 14 approximation for monthly models [@ashr
 
 MUNI-LCC is at an early stage of use. The evidence available at release is reproducibility rather than adoption. A synthetic worked example with a known injected savings value is included: the package recovers 6,879 therms of avoided gas use against a true value of 6,629 therms, within a fractional savings uncertainty of 34.2 percent at 90 percent confidence, using a 3PH baseline with CV(RMSE) of 7.9 percent. The 33 automated tests include closed-form checks of present-value factors, exact recovery of a known change-point model, and due dates for every reporting frequency. Every release is archived on Zenodo with a DOI. The package is a component of the author's broader work on decision support for municipal energy investment, alongside a planning tool and a public register of verification requirements in federal and New York State programs.
 
-# AI usage disclosure
-
-Generative AI was used in this work. The tool was Claude (Anthropic), model Claude Opus 5.5 (claude-opus-5-5), used through Anthropic's Claude application in October 2026. It was applied to: writing the Python source code, automated tests, and continuous integration workflow; drafting the documentation (README, methods, limitations, input reference, verification checklist, support and governance files); summarizing the public documentation of the tools compared in State of the field; and drafting this paper. The author selected the methods and their sources, made every analytic decision recorded in `docs/VERIFY_CHECKLIST.md` (including acceptance criteria checked against the FEMP v5.0 text), rewrote the Summary and Statement of need, re-ran the test suite and worked example, checked the worked-example results by hand against the source documents, and reviewed and validated all AI-generated code, documentation, and text before release.
 
 # Acknowledgements
 
