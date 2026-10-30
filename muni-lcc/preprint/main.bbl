@@ -1,0 +1,139 @@
+\begin{thebibliography}{20}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[cfr(2024)]{cfr200329}
+{2 CFR 200.329, Monitoring and Reporting Program Performance}, 2024.
+\newblock URL \url{https://www.ecfr.gov/current/title-2/section-200.329}.
+\newblock As amended at 89 FR 30136, April 22, 2024.
+
+\bibitem[{Efficiency Valuation Organization}(2022)]{evo_ipmvp}
+{Efficiency Valuation Organization}.
+\newblock {International Performance Measurement and Verification Protocol:
+  Core Concepts 2022}, 2022.
+\newblock URL \url{https://evo-world.org}.
+
+\bibitem[{U.S. Department of Energy, Federal Energy Management
+  Program}(2024)]{femp2024}
+{U.S. Department of Energy, Federal Energy Management Program}.
+\newblock {M\&V Guidelines: Measurement and Verification for Performance-Based
+  Contracts, Version 5.0}.
+\newblock Technical report, U.S. Department of Energy, September 2024.
+\newblock URL
+  \url{https://www.energy.gov/sites/default/files/2024-10/mv_guide_5_0.pdf}.
+\newblock Prepared by Pacific Northwest National Laboratory.
+
+\bibitem[{ASHRAE}(2023)]{ashrae14}
+{ASHRAE}.
+\newblock {Guideline 14-2023, Measurement of Energy, Demand, and Water
+  Savings}, 2023.
+
+\bibitem[{Efficiency Valuation Organization}(2018)]{evo_uncertainty}
+{Efficiency Valuation Organization}.
+\newblock {Uncertainty Assessment for IPMVP}, 2018.
+\newblock URL \url{https://evo-world.org}.
+
+\bibitem[{ASTM International}(2023)]{astm_e917}
+{ASTM International}.
+\newblock {Standard Practice for Measuring Life-Cycle Costs of Buildings and
+  Building Systems}, 2023.
+\newblock ASTM E917-17(2023).
+
+\bibitem[Fuller and Petersen(1996)]{fuller1996}
+Sieglinde~K. Fuller and Stephen~R. Petersen.
+\newblock \emph{Life-Cycle Costing Manual for the Federal Energy Management
+  Program}.
+\newblock NIST Handbook 135. National Institute of Standards and Technology,
+  1996.
+
+\bibitem[{National Institute of Standards and Technology}(2025)]{nist2025}
+{National Institute of Standards and Technology}.
+\newblock {Energy Price Indices and Discount Factors for Life-Cycle Cost
+  Analysis, 2025}.
+\newblock Technical Report NIST IR 85-3273-40, National Institute of Standards
+  and Technology, 2025.
+\newblock URL
+  \url{https://nvlpubs.nist.gov/nistpubs/ir/2025/NIST.IR.85-3273-40.pdf}.
+
+\bibitem[{National Institute of Standards and Technology}()]{blcc}
+{National Institute of Standards and Technology}.
+\newblock {Building Life Cycle Cost Programs (BLCC)}.
+\newblock URL \url{https://www.nist.gov/node/1331206}.
+
+\bibitem[{National Institute of Standards and Technology}(2024)]{e3}
+{National Institute of Standards and Technology}.
+\newblock {Economic Evaluation Engine (E3) Technical Manual}.
+\newblock Technical Report NIST Technical Note 2225r1, National Institute of
+  Standards and Technology, 2024.
+
+\bibitem[{OpenEEmeter contributors}()]{eemeter}
+{OpenEEmeter contributors}.
+\newblock {eemeter (OpenEEmeter)}.
+\newblock URL \url{https://eemeter.readthedocs.io}.
+
+\bibitem[{kW Labs}()]{nmecr}
+{kW Labs}.
+\newblock {nmecr: An implementation of peer-reviewed energy data analysis
+  algorithms for site-specific M\&V}.
+\newblock URL \url{https://github.com/kw-labs/nmecr}.
+
+\bibitem[{Lawrence Berkeley National Laboratory}()]{rmv2}
+{Lawrence Berkeley National Laboratory}.
+\newblock {RMV2.0: Advanced measurement and verification 2.0 (M\&V 2.0) for
+  commercial buildings}.
+\newblock URL \url{https://github.com/LBNL-ETA/RMV2.0}.
+
+\bibitem[{Lawrence Berkeley National Laboratory}(2017)]{lbnl2017}
+{Lawrence Berkeley National Laboratory}.
+\newblock {Assessment of Automated Measurement and Verification (M\&V) Methods:
+  Acceptance Criteria and Documentation}.
+\newblock Technical report, Lawrence Berkeley National Laboratory, 2017.
+\newblock URL
+  \url{https://bies.lbl.gov/sites/default/files/acceptcriteria-doc-2017.pdf}.
+
+\bibitem[Kissock et~al.(2003)Kissock, Haberl, and Claridge]{kissock2003}
+J.~Kelly Kissock, Jeff~S. Haberl, and David~E. Claridge.
+\newblock Inverse modeling toolkit: Numerical algorithms.
+\newblock \emph{ASHRAE Transactions}, 109\penalty0 (2), 2003.
+
+\bibitem[Reddy and Claridge(2000)]{reddy2000}
+T.~Agami Reddy and David~E. Claridge.
+\newblock Uncertainty of ``measured'' energy savings from statistical baseline
+  models.
+\newblock \emph{HVAC\&R Research}, 6\penalty0 (1):\penalty0 3--20, 2000.
+\newblock \doi{10.1080/10789669.2000.10391247}.
+
+\bibitem[Gallagher et~al.(2018)Gallagher, Leahy, O'Donovan, Bruton, and
+  O'Sullivan]{gallagher2018}
+Colm~V. Gallagher, Kevin Leahy, Peter O'Donovan, Ken Bruton, and Dominic T.~J.
+  O'Sullivan.
+\newblock Development and application of a machine learning supported
+  methodology for measurement and verification ({M\&V}) 2.0, 2018.
+\newblock arXiv:1801.08175.
+
+\bibitem[Akindipe(2026)]{munilcc}
+Stephen~Olumide Akindipe.
+\newblock {MUNI-LCC: Open Life-Cycle Cost and Measurement-and-Verification
+  Toolkit for Municipal Energy Projects}, 2026.
+\newblock Version 0.1.0. DOI 10.5281/zenodo.23362542 (concept DOI
+  10.5281/zenodo.23362541). \url{https://github.com/Olumide-Akindipe/muni-lcc}.
+
+\bibitem[Touzani et~al.(2019)Touzani, Granderson, Jump, and
+  Rebello]{touzani2019}
+Samir Touzani, Jessica Granderson, David~A. Jump, and Derrick Rebello.
+\newblock Evaluation of methods to assess the uncertainty in estimated energy
+  savings.
+\newblock \emph{Energy and Buildings}, 193, 2019.
+\newblock \doi{10.1016/j.enbuild.2019.03.041}.
+
+\bibitem[Walter et~al.(2014)Walter, Price, and Sohn]{walter2014}
+Travis Walter, Phillip~N. Price, and Michael~D. Sohn.
+\newblock Uncertainty estimation improves energy measurement and verification
+  procedures.
+\newblock \emph{Applied Energy}, 130:\penalty0 230--236, 2014.
+\newblock \doi{10.1016/j.apenergy.2014.05.030}.
+
+\end{thebibliography}

@@ -1,0 +1,28 @@
+{
+  "reference": {
+    "lcc_base": 1287460.3401941305,
+    "lcc_alt": 1135785.5905131064,
+    "net_savings": 151674.7496810241,
+    "added_investment_pv": 119656.35472370355,
+    "operational_savings_pv": 271331.10440472746,
+    "sir": 2.2675862475608044,
+    "airr": 0.06428949937473782,
+    "simple_payback_years": 7.790601109126442,
+    "discounted_payback_years": 9.015802842385037,
+    "cost_effective": true
+  },
+  "gas_savings_unc_therms": 2351.7005640843354,
+  "lighting_savings_unc_kwh": 716.6287103409801,
+  "ns_low_both": 100412.74911594298,
+  "ns_high_both": 202936.75024610502,
+  "sir_low_both": 1.8391760667271224,
+  "sir_high_both": 2.6959964283944853,
+  "ns_low_gas_only": 102534.1385833493,
+  "ns_high_gas_only": 200815.3607786987,
+  "breakeven_rate": 0.0920650064945221,
+  "breakeven_gas_price": null,
+  "ns_at_zero_gas_price": 7923.509677121532,
+  "ns_per_verified_therm": 20.895777229533763,
+  "breakeven_gas_savings_therms": -379.19190992914173,
+  "breakeven_study_years": 10
+}
