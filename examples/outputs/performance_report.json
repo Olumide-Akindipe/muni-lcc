@@ -1,0 +1,147 @@
+{
+  "status": "FINAL",
+  "generated": "2026-10-14",
+  "regulation": "2 CFR 200.329 as amended 89 FR 30136 (April 22, 2024)",
+  "award": {
+    "award_id": "EXAMPLE-0001",
+    "agency": "Hypothetical federal energy program",
+    "recipient": "Town of Example (hypothetical)",
+    "project": "Town Hall heating plant and lighting retrofit"
+  },
+  "reporting_period": {
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "frequency": "annual"
+  },
+  "due_date": "2026-03-31",
+  "objectives": [
+    {
+      "id": "O1",
+      "description": "Reduce Town Hall natural gas use",
+      "metric": "verified avoided natural gas use",
+      "units": "therms/yr",
+      "target": 7000,
+      "actual": 6879.439727215678,
+      "percent_of_target": 0.982777103887954,
+      "met": false,
+      "reason_not_met": "Example text: the controls sequence for the second heating zone was commissioned in March 2025, so January and February ran on the old schedule. Full-year savings are expected in the next period."
+    },
+    {
+      "id": "O2",
+      "description": "Reduce lighting electricity use",
+      "metric": "verified lighting savings",
+      "units": "kWh/yr",
+      "target": 25000,
+      "actual": 28391.999999999996,
+      "percent_of_target": 1.1356799999999998,
+      "met": true,
+      "reason_not_met": ""
+    },
+    {
+      "id": "O3",
+      "description": "Deliver a cost-effective project over its life",
+      "metric": "net savings, present value",
+      "units": "USD",
+      "target": 0,
+      "actual": 151674.7496810241,
+      "percent_of_target": null,
+      "met": true,
+      "reason_not_met": ""
+    }
+  ],
+  "costs": {
+    "budget": 185000,
+    "actual_cost": 196500,
+    "variance": 11500,
+    "unit": "first-year therm avoided",
+    "planned_unit_cost": 26.428571428571427,
+    "actual_unit_cost": 28.56337256980804,
+    "cost_overrun": true,
+    "high_unit_cost": false,
+    "explanation": "Example text: boiler equipment prices rose between bid and award; the change order was approved by the program officer."
+  },
+  "significant_developments": [
+    {
+      "type": "beneficial",
+      "summary": "Example text: utility rebate of $8,000 received for the condensing boiler, to be reported as program income."
+    }
+  ],
+  "mv_summary": {
+    "option_c": {
+      "model_form": "3PH",
+      "model_equation": "E/day = 43.0004 + 6.3688*max(57.0 - T, 0)",
+      "adjusted_baseline": 45616.83972721567,
+      "reporting_actual": 38737.399999999994,
+      "avoided_energy": 6879.439727215678,
+      "fractional_savings": 0.1508092136227338,
+      "fractional_savings_uncertainty": 0.34184478058304624,
+      "confidence": 0.9,
+      "baseline_statistics": {
+        "n": 24,
+        "p": 3,
+        "cv_rmse": 0.07913705403652709,
+        "nmbe": -6.756077454091115e-17,
+        "r2": 0.9878783356120622,
+        "slope_t": [
+          42.259034881442204
+        ],
+        "min_abs_slope_t": 42.259034881442204,
+        "whole_year_baseline": true
+      },
+      "acceptance": {
+        "checks": {
+          "r2": true,
+          "nmbe": true,
+          "slope_t": true,
+          "cv_rmse": true,
+          "fsu": true
+        },
+        "all_pass": true,
+        "warnings": [],
+        "criteria": {
+          "min_r2": 0.75,
+          "max_abs_nmbe": 5e-05,
+          "min_abs_slope_t": 2.0,
+          "max_cv_rmse": 0.25,
+          "max_fsu": 0.5,
+          "sources": {
+            "min_r2": "FEMP M&V Guidelines v5.0 (September 2024), Section 5.3.4.1: IPMVP minimum acceptable R2 of 0.75",
+            "max_abs_nmbe": "FEMP M&V Guidelines v5.0, Section 5.3.4.1: ASHRAE Guideline 14 accepts net determination bias below 0.005 percent",
+            "min_abs_slope_t": "FEMP M&V Guidelines v5.0, Section 5.3.4.1: IPMVP specifies t-statistic greater than 2.0 for an independent variable",
+            "max_cv_rmse": "Not stated by FEMP v5.0 for Option C. LBNL (2017) guidance value citing ASHRAE Guideline 14. https://bies.lbl.gov/sites/default/files/acceptcriteria-doc-2017.pdf",
+            "max_fsu": "Not stated by FEMP v5.0. LBNL (2017) guidance value. https://bies.lbl.gov/sites/default/files/acceptcriteria-doc-2017.pdf"
+          }
+        }
+      }
+    },
+    "option_a": [
+      {
+        "measure": "LED lighting retrofit",
+        "savings": 28391.999999999996,
+        "savings_units": "kWh/yr",
+        "relative_uncertainty": 0.02524051529800578,
+        "stipulated_parameter": {
+          "name": "annual operating hours",
+          "value": 3380,
+          "units": "h/yr",
+          "basis": "posted building schedule, 65 h/week x 52 weeks, agreed in M&V plan"
+        }
+      }
+    ]
+  },
+  "lcc_summary": {
+    "lcc_base": 1287460.3401941305,
+    "lcc_alt": 1135785.5905131064,
+    "net_savings": 151674.7496810241,
+    "added_investment_pv": 119656.35472370355,
+    "operational_savings_pv": 271331.10440472746,
+    "sir": 2.2675862475608044,
+    "airr": 0.06428949937473782,
+    "simple_payback_years": 7.790601109126442,
+    "discounted_payback_years": 9.015802842385037,
+    "cost_effective": true,
+    "study_period_years": 25,
+    "real_discount_rate": 0.03
+  },
+  "completeness_issues": []
+}

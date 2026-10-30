@@ -1,0 +1,9 @@
+{
+  "synthetic": true,
+  "seed": 2026,
+  "true_savings_fraction_option_c": 0.15,
+  "true_adjusted_baseline_therms": 44191.4,
+  "true_avoided_therms": 6628.7,
+  "true_lighting_kw_reduction": 8.4,
+  "true_lighting_savings_kwh": 28392.0
+}

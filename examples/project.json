@@ -1,0 +1,87 @@
+{
+  "_about": "SYNTHETIC worked example. Hypothetical Town Hall, hypothetical award, invented prices and costs. Shows every input the toolkit accepts. Replace all values for a real project.",
+  "confidence": 0.90,
+
+  "option_a": [
+    {
+      "name": "LED lighting retrofit",
+      "baseline": {"name": "lighting circuit demand", "readings": [14.4, 14.9, 14.5, 14.7, 14.5], "units": "kW"},
+      "reporting": {"name": "lighting circuit demand", "readings": [6.1, 6.3, 6.2, 6.0, 6.4], "units": "kW"},
+      "stipulated": {"name": "annual operating hours", "value": 3380, "units": "h/yr",
+                     "basis": "posted building schedule, 65 h/week x 52 weeks, agreed in M&V plan"},
+      "interactive_factor": 1.0,
+      "savings_units": "kWh/yr"
+    }
+  ],
+
+  "option_c": {
+    "baseline_csv": "data/gas_baseline.csv",
+    "reporting_csv": "data/gas_reporting.csv",
+    "energy_units": "therms",
+    "acceptance_criteria": "../config/acceptance_criteria.json"
+  },
+
+  "lcc": {
+    "study_period_years": 25,
+    "real_discount_rate": 0.03,
+    "base": {
+      "name": "Keep existing boiler and fluorescent lighting",
+      "initial_investment": 0,
+      "annual_costs": [
+        {"name": "natural gas", "category": "energy", "quantity_source": "option_c:adjusted_baseline", "unit_price": 1.20},
+        {"name": "lighting electricity", "category": "energy", "quantity_source": "option_a:LED lighting retrofit:baseline_annual", "unit_price": 0.17},
+        {"name": "boiler and lighting maintenance", "category": "omr", "amount": 6500}
+      ],
+      "one_time_costs": [
+        {"name": "end-of-life boiler replacement", "amount": 95000, "year": 8, "category": "replacement"}
+      ]
+    },
+    "alternative": {
+      "name": "Condensing boiler, controls, and LED retrofit",
+      "initial_investment": 196500,
+      "annual_costs": [
+        {"name": "natural gas", "category": "energy", "quantity_source": "option_c:reporting_actual", "unit_price": 1.20},
+        {"name": "lighting electricity", "category": "energy", "quantity_source": "option_a:LED lighting retrofit:reporting_annual", "unit_price": 0.17},
+        {"name": "boiler and lighting maintenance", "category": "omr", "amount": 4000}
+      ],
+      "one_time_costs": [
+        {"name": "LED driver replacement", "amount": 12000, "year": 15, "category": "replacement"},
+        {"name": "boiler remaining value", "amount": 20000, "year": 25, "category": "residual"}
+      ]
+    }
+  },
+
+  "award": {
+    "award_id": "EXAMPLE-0001",
+    "agency": "Hypothetical federal energy program",
+    "recipient": "Town of Example (hypothetical)",
+    "project": "Town Hall heating plant and lighting retrofit",
+    "is_subrecipient": false,
+    "period_of_performance_end": "2027-06-30",
+    "reporting_period": {"start": "2025-01-01", "end": "2025-12-31", "frequency": "annual"}
+  },
+
+  "objectives": [
+    {"id": "O1", "description": "Reduce Town Hall natural gas use", "metric": "verified avoided natural gas use",
+     "units": "therms/yr", "target": 7000, "actual_source": "option_c",
+     "reason_not_met": "Example text: the controls sequence for the second heating zone was commissioned in March 2025, so January and February ran on the old schedule. Full-year savings are expected in the next period."},
+    {"id": "O2", "description": "Reduce lighting electricity use", "metric": "verified lighting savings",
+     "units": "kWh/yr", "target": 25000, "actual_source": "option_a:LED lighting retrofit"},
+    {"id": "O3", "description": "Deliver a cost-effective project over its life", "metric": "net savings, present value",
+     "units": "USD", "target": 0, "actual_source": "lcc:net_savings"}
+  ],
+
+  "costs": {
+    "budget": 185000,
+    "actual_cost": 196500,
+    "planned_units": 7000,
+    "unit": "first-year therm avoided",
+    "unit_basis_source": "option_c",
+    "unit_cost_tolerance": 0.10,
+    "explanation": "Example text: boiler equipment prices rose between bid and award; the change order was approved by the program officer."
+  },
+
+  "significant_developments": [
+    {"type": "beneficial", "summary": "Example text: utility rebate of $8,000 received for the condensing boiler, to be reported as program income."}
+  ]
+}

@@ -1,0 +1,25 @@
+# Talking about MUNI-LCC
+
+*Plain-language header: what to say about this project out loud. Every number here comes from the verified example results.*
+
+## 60-second version
+
+**The problem.** Small cities and towns get federal and state money for energy upgrades, and the grant rules require them to report what they achieved. Most cannot afford the consultants and software federal agencies use to verify savings, so they report estimates.
+
+**What I built.** MUNI-LCC, a free, open toolkit that implements IPMVP Options A and C as defined in the Department of Energy's FEMP M&V Guidelines v5.0, computes life-cycle cost consistent with ASTM E917, and produces report content aligned with the federal grant reporting rule (2 CFR 200.329).
+
+**What it makes possible.** A town can show, from its own utility bills and measurements, how much a project saved, how certain that number is, whether the project was worth its cost over its life, and what its performance report must explain. In a test with a known answer, it recovered 15.1 percent savings against a true 15.0 percent.
+
+**Who can use it.** Municipal facilities and finance staff, grant administrators, state energy offices, auditors, and researchers.
+
+**Where it is.** On GitHub at github.com/Olumide-Akindipe/muni-lcc, with a permanent DOI on Zenodo.
+
+## Two-sentence version
+
+I built MUNI-LCC, an open toolkit that lets small municipalities verify energy savings with federal methods and produce report content aligned with federal grant rules. It connects measured savings, life-cycle cost, and the content of a 2 CFR 200.329 performance report in one tested package.
+
+## Questions you may be asked
+
+1. **Where does the data come from?** The toolkit uses each municipality's own utility bills, weather, and field measurements. The included example is synthetic, built so the correct answer is known in advance.
+2. **What are its limits?** Version 0.1 covers two of the four verification options, monthly billing data, and temperature as the only adjustment. It supports a report; it does not replace an agency's required form or an agreed M&V plan.
+3. **Why does this matter for the United States?** Taxpayer dollars invested in municipal infrastructure projects are only accountable if outcomes are verified. This toolkit lowers the cost of verification for the communities least able to pay for it.

@@ -1,0 +1,10 @@
+{
+  "_about": "FEMP discount rates for federal life-cycle cost analysis. Municipal users are not bound by FEMP rates but often adopt them as a defensible default. Update each year when NIST publishes the new Annual Supplement to Handbook 135.",
+  "edition": "2025",
+  "real_discount_rate": 0.030,
+  "nominal_discount_rate": 0.045,
+  "implied_inflation_rate": 0.015,
+  "max_study_period_years": 40,
+  "source": "NIST IR 85-3273-40, Energy Price Indices and Discount Factors for Life-Cycle Cost Analysis 2025 (August 2025)",
+  "url": "https://nvlpubs.nist.gov/nistpubs/ir/2025/NIST.IR.85-3273-40.pdf"
+}

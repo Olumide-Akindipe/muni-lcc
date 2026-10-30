@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "muni-lcc"
+version = "0.1.0"
+description = "Open life-cycle cost and measurement-and-verification toolkit for municipal energy projects (FEMP M&V v5.0, IPMVP Options A and C, ASTM E917, 2 CFR 200.329 reporting)"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Stephen Olumide Akindipe" }]
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21"]
+keywords = ["life-cycle cost", "measurement and verification", "IPMVP", "FEMP", "municipal energy", "uniform guidance"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+examples = ["matplotlib>=3.5"]
+
+[project.scripts]
+muni-lcc = "muni_lcc.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Olumide-Akindipe/muni-lcc"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,16 @@
+# Limitations
+
+*Plain-language header: an honest list of what this version cannot do. Read it before you describe the toolkit to anyone, so you never claim more than it supports.*
+
+1. **Two of four IPMVP options.** v0.1 implements Options A and C. Option B (all parameters measured) and Option D (calibrated simulation) are not implemented.
+2. **Uncertainty method.** Option C uncertainty uses the ASHRAE Guideline 14 approximation, not the EVO 10100-1:2018 procedure that FEMP v5.0 cites. Results can differ; if a funder's M&V plan specifies EVO 10100-1, use that method for reported uncertainty. The 1.26 form of the ASHRAE approximation is taken from a published reproduction (arXiv 1801.08175) and has not yet been checked against a licensed copy of ASHRAE Guideline 14-2023.
+3. **Monthly billing data for Option C.** The uncertainty formula is the ASHRAE Guideline 14 approximation for monthly models. It does not correct for autocorrelation, which matters for daily or hourly data. Do not apply it to interval data without that correction.
+4. **Temperature is the only independent variable.** Occupancy, production, school calendars, and other routine adjustments are not modeled. Non-routine adjustments (added floor area, changed operating hours) must be handled outside the toolkit and documented in the M&V plan.
+5. **Avoided energy use only.** Normalized savings (both periods projected to typical weather) are not computed.
+6. **Paywalled standards are implemented from public descriptions.** ASTM E917 and ASHRAE Guideline 14 are copyrighted and were not reproduced. The LCC equations follow NIST Handbook 135, which is the public federal formulation of the same practice. Users who need certified conformance should compare against their licensed copies.
+7. **Acceptance thresholds.** R-squared, bias, and t-statistic defaults follow FEMP v5.0. CV(RMSE) and FSU defaults follow LBNL (2017) guidance because FEMP states no Option C value. A project's M&V plan sets the binding targets. Slope t-statistics are conditional on the selected change points and do not reflect uncertainty in the change point itself.
+8. **Option A uncertainty excludes stipulated values.** Only the measured key parameter contributes to the stated uncertainty. Stipulated hours carry real uncertainty that is settled by agreement, not measurement.
+9. **Not a compliance determination.** The report module assembles the content 2 CFR 200.329 asks for and flags missing explanations. It does not replace the OMB-approved form an agency prescribes, agency-specific terms and conditions, or the judgment of the program officer. Due-date extensions are not modeled.
+10. **Constant-dollar analysis.** LCC runs in real terms. Nominal analysis, taxes, financing, and incentives as cash flows are not modeled; a utility rebate can be entered as a negative one-time cost.
+11. **Synthetic example only.** The worked example uses synthetic data with a known answer. It demonstrates correctness of the computation, not performance on a particular real building. Validation against real municipal billing data is planned (see NEXT_STEPS.md).
+12. **Discount rate vintage.** The default is the FEMP 2025 rate. NIST publishes a new edition each year; check for the current one.

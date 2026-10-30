@@ -1,0 +1,276 @@
+{
+  "option_a": [
+    {
+      "measure": "LED lighting retrofit",
+      "option": "A",
+      "baseline_key_parameter": {
+        "name": "lighting circuit demand",
+        "mean": 14.6,
+        "units": "kW",
+        "n": 5
+      },
+      "reporting_key_parameter": {
+        "name": "lighting circuit demand",
+        "mean": 6.2,
+        "units": "kW",
+        "n": 5
+      },
+      "stipulated_parameter": {
+        "name": "annual operating hours",
+        "value": 3380,
+        "units": "h/yr",
+        "basis": "posted building schedule, 65 h/week x 52 weeks, agreed in M&V plan"
+      },
+      "interactive_factor": 1.0,
+      "baseline_annual": 49348.0,
+      "reporting_annual": 20956.0,
+      "savings": 28391.999999999996,
+      "savings_units": "kWh/yr",
+      "confidence": 0.9,
+      "absolute_uncertainty": 716.6287103409801,
+      "relative_uncertainty": 0.02524051529800578,
+      "uncertainty_note": "Measurement uncertainty only. Stipulated parameter treated as exact by agreement."
+    }
+  ],
+  "option_c": {
+    "option": "C",
+    "model_form": "3PH",
+    "model_equation": "E/day = 43.0004 + 6.3688*max(57.0 - T, 0)",
+    "baseline_statistics": {
+      "n": 24,
+      "p": 3,
+      "cv_rmse": 0.07913705403652709,
+      "nmbe": -6.756077454091115e-17,
+      "r2": 0.9878783356120622,
+      "slope_t": [
+        42.259034881442204
+      ],
+      "min_abs_slope_t": 42.259034881442204,
+      "whole_year_baseline": true
+    },
+    "reporting_periods": 12,
+    "reporting_days": 365.0,
+    "adjusted_baseline": 45616.83972721567,
+    "reporting_actual": 38737.399999999994,
+    "avoided_energy": 6879.439727215678,
+    "fractional_savings": 0.1508092136227338,
+    "confidence": 0.9,
+    "fractional_savings_uncertainty": 0.34184478058304624,
+    "absolute_uncertainty": 2351.700564084335,
+    "by_period": [
+      {
+        "period": "2025-01",
+        "adjusted_baseline": 6979.554088658533,
+        "actual": 6905.9,
+        "savings": 73.65408865853351
+      },
+      {
+        "period": "2025-02",
+        "adjusted_baseline": 6197.118191906855,
+        "actual": 5371.1,
+        "savings": 826.0181919068546
+      },
+      {
+        "period": "2025-03",
+        "adjusted_baseline": 6209.570929136333,
+        "actual": 5487.1,
+        "savings": 722.4709291363324
+      },
+      {
+        "period": "2025-04",
+        "adjusted_baseline": 3410.807854622773,
+        "actual": 2863.5,
+        "savings": 547.307854622773
+      },
+      {
+        "period": "2025-05",
+        "adjusted_baseline": 1333.0109188290646,
+        "actual": 1270.3,
+        "savings": 62.71091882906467
+      },
+      {
+        "period": "2025-06",
+        "adjusted_baseline": 1290.0105666087723,
+        "actual": 820.0,
+        "savings": 470.01056660877225
+      },
+      {
+        "period": "2025-07",
+        "adjusted_baseline": 1333.0109188290646,
+        "actual": 680.9,
+        "savings": 652.1109188290646
+      },
+      {
+        "period": "2025-08",
+        "adjusted_baseline": 1333.0109188290646,
+        "actual": 521.6,
+        "savings": 811.4109188290646
+      },
+      {
+        "period": "2025-09",
+        "adjusted_baseline": 1290.0105666087723,
+        "actual": 1485.6,
+        "savings": -195.58943339122766
+      },
+      {
+        "period": "2025-10",
+        "adjusted_baseline": 3011.179343428732,
+        "actual": 2651.6,
+        "savings": 359.57934342873205
+      },
+      {
+        "period": "2025-11",
+        "adjusted_baseline": 5302.329760148773,
+        "actual": 4447.1,
+        "savings": 855.2297601487726
+      },
+      {
+        "period": "2025-12",
+        "adjusted_baseline": 7927.2256696089335,
+        "actual": 6232.7,
+        "savings": 1694.5256696089336
+      }
+    ],
+    "candidates": [
+      {
+        "form": "mean",
+        "n": 24,
+        "p": 1,
+        "cv_rmse": 0.6953259333606683,
+        "nmbe": -2.1076024231784238e-16,
+        "r2": -0.02491510427044097,
+        "slope_t": [],
+        "min_abs_slope_t": null,
+        "whole_year_baseline": true,
+        "slopes_significant": true,
+        "equation": "E/day = 126.4521"
+      },
+      {
+        "form": "2P",
+        "n": 24,
+        "p": 2,
+        "cv_rmse": 0.1731736647209387,
+        "nmbe": 2.6736408788491257e-16,
+        "r2": 0.9391907595761553,
+        "slope_t": [
+          -18.7988507429094
+        ],
+        "min_abs_slope_t": 18.7988507429094,
+        "whole_year_baseline": true,
+        "slopes_significant": true,
+        "equation": "E/day = 353.3175 + -4.7637*T"
+      },
+      {
+        "form": "3PH",
+        "n": 24,
+        "p": 3,
+        "cv_rmse": 0.07913705403652709,
+        "nmbe": -6.756077454091115e-17,
+        "r2": 0.9878783356120622,
+        "slope_t": [
+          42.259034881442204
+        ],
+        "min_abs_slope_t": 42.259034881442204,
+        "whole_year_baseline": true,
+        "slopes_significant": true,
+        "equation": "E/day = 43.0004 + 6.3688*max(57.0 - T, 0)"
+      },
+      {
+        "form": "4P",
+        "n": 24,
+        "p": 4,
+        "cv_rmse": 0.08007911670619833,
+        "nmbe": -2.8671103695799166e-16,
+        "r2": 0.9881790672552776,
+        "slope_t": [
+          -30.96456444837831,
+          -0.7044098086379341
+        ],
+        "min_abs_slope_t": 0.7044098086379341,
+        "whole_year_baseline": true,
+        "slopes_significant": false,
+        "equation": "E/day = 45.5373 + -6.2748*min(T - 57.0, 0) + -0.3503*max(T - 57.0, 0)"
+      },
+      {
+        "form": "5P",
+        "n": 24,
+        "p": 5,
+        "cv_rmse": 0.08379063787339876,
+        "nmbe": -6.907200239248416e-16,
+        "r2": 0.9877050208482142,
+        "slope_t": [
+          38.418522707876754,
+          0.08011189046177968
+        ],
+        "min_abs_slope_t": 0.08011189046177968,
+        "whole_year_baseline": true,
+        "slopes_significant": false,
+        "equation": "E/day = 41.422 + 6.1967*max(58.0 - T, 0) + 1.0561*max(T - 71.0, 0)"
+      }
+    ],
+    "energy_units": "therms",
+    "acceptance": {
+      "checks": {
+        "r2": true,
+        "nmbe": true,
+        "slope_t": true,
+        "cv_rmse": true,
+        "fsu": true
+      },
+      "all_pass": true,
+      "warnings": [],
+      "criteria": {
+        "min_r2": 0.75,
+        "max_abs_nmbe": 5e-05,
+        "min_abs_slope_t": 2.0,
+        "max_cv_rmse": 0.25,
+        "max_fsu": 0.5,
+        "sources": {
+          "min_r2": "FEMP M&V Guidelines v5.0 (September 2024), Section 5.3.4.1: IPMVP minimum acceptable R2 of 0.75",
+          "max_abs_nmbe": "FEMP M&V Guidelines v5.0, Section 5.3.4.1: ASHRAE Guideline 14 accepts net determination bias below 0.005 percent",
+          "min_abs_slope_t": "FEMP M&V Guidelines v5.0, Section 5.3.4.1: IPMVP specifies t-statistic greater than 2.0 for an independent variable",
+          "max_cv_rmse": "Not stated by FEMP v5.0 for Option C. LBNL (2017) guidance value citing ASHRAE Guideline 14. https://bies.lbl.gov/sites/default/files/acceptcriteria-doc-2017.pdf",
+          "max_fsu": "Not stated by FEMP v5.0. LBNL (2017) guidance value. https://bies.lbl.gov/sites/default/files/acceptcriteria-doc-2017.pdf"
+        }
+      }
+    }
+  },
+  "lcc": {
+    "lcc_base": 1287460.3401941305,
+    "lcc_alt": 1135785.5905131064,
+    "net_savings": 151674.7496810241,
+    "added_investment_pv": 119656.35472370355,
+    "operational_savings_pv": 271331.10440472746,
+    "sir": 2.2675862475608044,
+    "airr": 0.06428949937473782,
+    "simple_payback_years": 7.790601109126442,
+    "discounted_payback_years": 9.015802842385037,
+    "cost_effective": true,
+    "study_period_years": 25,
+    "real_discount_rate": 0.03
+  },
+  "lcc_detail": {
+    "base": {
+      "initial": 0.0,
+      "replacement": 74993.87725982387,
+      "residual": 0.0,
+      "energy": 1099281.0029409996,
+      "water": 0.0,
+      "omr": 113185.45999330709,
+      "investment_related": 74993.87725982387,
+      "operational": 1212466.4629343066,
+      "total": 1287460.3401941305
+    },
+    "alternative": {
+      "initial": 196500.0,
+      "replacement": 7702.343368760609,
+      "residual": 9552.111385233184,
+      "energy": 871482.767764467,
+      "water": 0.0,
+      "omr": 69652.59076511205,
+      "investment_related": 194650.23198352742,
+      "operational": 941135.3585295791,
+      "total": 1135785.5905131064
+    }
+  }
+}
