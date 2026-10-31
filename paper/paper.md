@@ -14,7 +14,7 @@ authors:
 affiliations:
   - name: Independent Researcher, Albany, NY, USA
     index: 1
-date: '14 October 2026'
+date: '30 October 2026'
 bibliography: paper.bib
 ---
 
@@ -38,7 +38,7 @@ The design follows from the intended user, a municipal staff member without a st
 
 * **One input file, one command.** A project is a single JSON file; `muni-lcc run` writes results and the report. The only runtime dependency is NumPy.
 * **Traceable thresholds.** Acceptance criteria live in a configuration file in which every value names its source: FEMP v5.0 Section 5.3.4.1 for R-squared (0.75), net determination bias (0.005 percent), and slope t-statistics (greater than 2.0), and LBNL guidance [@lbnl2017] for CV(RMSE) and fractional savings uncertainty, for which FEMP states no value. FEMP's calibration tolerances for Option D (Table 4-2) were deliberately not applied to Option C.
-* **Physically constrained models.** Option C fits change-point models by days-weighted least squares, which makes net determination bias zero by construction. Change points are found by grid search, fits with implausible slope signs are rejected, and models whose slopes are all significant are preferred before CV(RMSE) is compared. In the worked example this rule rejects the four- and five-parameter fits, whose added slopes have t-statistics of 0.7 and 0.1.
+* **Physically constrained models.** Option C fits change-point models by days-weighted least squares, which makes net determination bias zero by construction. Change points are found by grid search, fits with implausible slope signs are rejected, and models whose slopes are all significant are preferred and then compared by the Schwarz information criterion, which penalizes each added parameter. In the worked example this rule rejects the four- and five-parameter fits, whose added slopes have t-statistics of 0.7 and 0.1.
 * **Stipulations must be documented.** An Option A stipulated value without a written basis is refused, reflecting the FEMP requirement that the M&V plan justify stipulations.
 * **Verified quantities drive cost.** Annual energy quantities in the life-cycle cost study can be drawn from Option A or Option C results instead of projections.
 * **Reports that list what is missing.** The report module computes the 200.329(c)(1) due date, compares each objective with its verified result, and lists every explanation 200.329(c)(2) or (e) requires but the user has not supplied.
@@ -50,8 +50,7 @@ Uncertainty uses the ASHRAE Guideline 14 approximation for monthly models [@ashr
 
 <!-- Update before submission: add the validation report DOI, any external users, issues, or citations. -->
 
-MUNI-LCC is at an early stage of use. The evidence available at release is reproducibility rather than adoption. A synthetic worked example with a known injected savings value is included: the package recovers 6,879 therms of avoided gas use against a true value of 6,629 therms, within a fractional savings uncertainty of 34.2 percent at 90 percent confidence, using a 3PH baseline with CV(RMSE) of 7.9 percent. The 33 automated tests include closed-form checks of present-value factors, exact recovery of a known change-point model, and due dates for every reporting frequency. Every release is archived on Zenodo with a DOI. The package is a component of the author's broader work on decision support for municipal energy investment, alongside a planning tool and a public register of verification requirements in federal and New York State programs.
-
+MUNI-LCC is at an early stage of use. The evidence available at release is reproducibility rather than adoption. A synthetic worked example with a known injected savings value is included: the package recovers 6,879 therms of avoided gas use against a true value of 6,629 therms, within a fractional savings uncertainty of 34.2 percent at 90 percent confidence, using a 3PH baseline with CV(RMSE) of 7.9 percent. The 37 automated tests include closed-form checks of present-value factors, exact recovery of a known change-point model, and due dates for every reporting frequency. Every release is archived on Zenodo with a DOI. The package is a component of the author's broader work on decision support for municipal energy investment, alongside a planning tool and a public register of verification requirements in federal and New York State programs.
 
 # Acknowledgements
 

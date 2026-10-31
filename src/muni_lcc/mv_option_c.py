@@ -21,8 +21,12 @@ Change points are found by grid search. Models whose slopes have the wrong
 physical sign are rejected. Among valid models, those whose slope
 coefficients are all statistically significant (|t| > 2.0, the IPMVP value
 quoted in FEMP v5.0 Section 5.3.4.1) are preferred; the selected model is the
-preferred model with the lowest CV(RMSE). If no model has significant slopes,
-the lowest CV(RMSE) valid model is selected and the acceptance check fails on
+preferred model with the lowest Schwarz information criterion (BIC), computed
+on period totals as n ln(SSE / n) + p ln(n), with ties going to fewer
+parameters. BIC replaced lowest CV(RMSE) in v0.1.1: because slope t-statistics
+are conditional on a change point chosen to minimize error, the t screen alone
+admitted spurious 4P and 5P slopes. If no model has significant slopes, the
+lowest-BIC valid model is selected and the acceptance check fails on
 the t-statistic. The user can force a form.
 
 Avoided energy use (FEMP v5.0, IPMVP):
@@ -43,7 +47,10 @@ or 48 months); the result flags a baseline that is not.
 Fractional savings uncertainty, ASHRAE Guideline 14 approximation for
 monthly data without autocorrelation correction:
     FSU = t * 1.26 * CV(RMSE) / F * sqrt((n + 2) / (n * m))
-n baseline periods, m reporting periods, F fractional savings.
+n baseline periods, m reporting periods, F fractional savings. The absolute
+uncertainty FSU x savings = t * 1.26 * CV(RMSE) * adjusted baseline *
+sqrt((n + 2) / (n * m)) does not depend on the savings, so it is reported for
+any sign of savings; FSU itself is reported only when savings are positive.
 """
 
 from __future__ import annotations
@@ -182,7 +189,11 @@ def fit_statistics(model: Model, periods: Sequence[Period]) -> Dict[str, object]
     sse, ybar = float(resid @ resid), float(y.mean())
     sst = float(((y - ybar) ** 2).sum())
     t = slope_t_statistics(model, periods)
-    return {"n": n, "p": p,
+    # Schwarz information criterion on period totals. The floor keeps exact
+    # (noiseless) fits finite so that ties go to the model with fewer parameters.
+    sse_eff = max(sse, 1e-12 * max(sst, 1.0))
+    bic = n * math.log(sse_eff / n) + p * math.log(n)
+    return {"n": n, "p": p, "bic": bic,
             "cv_rmse": math.sqrt(sse / (n - p)) / ybar,
             "nmbe": float(resid.sum()) / ((n - p) * ybar),
             "r2": 1 - sse / sst if sst > 0 else 0.0,
@@ -233,7 +244,8 @@ def fit_baseline(periods: Sequence[Period], forms: Sequence[str] = MODEL_FORMS,
     """Fit candidate forms; return the selected model and a comparison table.
 
     Preference order: models whose slopes are all significant (|t| > min_slope_t),
-    then lowest CV(RMSE). The mean model has no slopes and counts as significant.
+    then lowest BIC (ties to fewer parameters). The mean model has no slopes and
+    counts as significant.
     """
     table, fits = [], []
     for form in ([force] if force else forms):
@@ -249,7 +261,7 @@ def fit_baseline(periods: Sequence[Period], forms: Sequence[str] = MODEL_FORMS,
     if not fits:
         raise ValueError("no valid baseline model could be fitted")
     pool = [f for f in fits if f[1]["slopes_significant"]] or fits
-    selected = min(pool, key=lambda f: f[1]["cv_rmse"])
+    selected = min(pool, key=lambda f: (f[1]["bic"], f[1]["p"]))
     return {"model": selected[0], "statistics": selected[1], "candidates": table}
 
 
@@ -263,7 +275,9 @@ def avoided_energy(model: Model, baseline: Sequence[Period], reporting: Sequence
     F = saved / adj_total if adj_total else 0.0
     n, m = stats["n"], len(reporting)
     t = t_critical(confidence, n - stats["p"])
-    fsu = (t * 1.26 * stats["cv_rmse"] / F * math.sqrt((n + 2) / (n * m))) if F > 0 else None
+    # Absolute uncertainty is defined for any sign of savings; FSU only when savings > 0.
+    abs_unc = t * 1.26 * stats["cv_rmse"] * adj_total * math.sqrt((n + 2) / (n * m))
+    fsu = abs_unc / saved if saved > 0 else None
     return {
         "option": "C",
         "model_form": model.form,
@@ -277,7 +291,7 @@ def avoided_energy(model: Model, baseline: Sequence[Period], reporting: Sequence
         "fractional_savings": F,
         "confidence": confidence,
         "fractional_savings_uncertainty": fsu,
-        "absolute_uncertainty": abs(fsu * saved) if fsu is not None else None,
+        "absolute_uncertainty": abs_unc,
         "by_period": [{"period": p.label, "adjusted_baseline": float(a), "actual": p.energy,
                         "savings": float(a) - p.energy} for p, a in zip(reporting, adjusted)],
     }

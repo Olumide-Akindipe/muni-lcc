@@ -54,7 +54,7 @@ Uncertainty: standard error of the difference of two independent means, times th
 | 4P | E = b0 + b1 min(T minus cp, 0) + b2 max(T minus cp, 0), b1 < b2 | 4 |
 | 5P | E = b0 + b1 max(cpH minus T, 0) + b2 max(T minus cpC, 0), b1, b2 > 0 | 5 |
 
-Change points are searched on a 1 degree grid between the 10th and 90th percentiles of baseline temperatures. Fits with physically implausible slope signs are rejected. The selected model is the valid form with the lowest CV(RMSE), unless the project file forces a form (`force_model`), which is the right choice when the M&V plan specifies one.
+Change points are searched on a 1 degree grid between the 10th and 90th percentiles of baseline temperatures. Fits with physically implausible slope signs are rejected. Selection among the valid forms is described under Model selection below, unless the project file forces a form (`force_model`), which is the right choice when the M&V plan specifies one.
 
 **Statistics**, computed on period totals with n periods and p parameters:
 
@@ -63,7 +63,7 @@ Change points are searched on a 1 degree grid between the 10th and 90th percenti
 * R-squared = 1 minus SSE / SST
 * Slope t-statistic t_j = b_j / se(b_j), from the weighted least squares covariance s^2 (X'WX)^(minus 1), with s^2 = sum(w r^2) / (n minus p). Computed for slope coefficients only, conditional on the selected change points.
 
-**Model selection.** Among physically valid fits, models whose slopes all have |t| greater than the t threshold are preferred, and the lowest CV(RMSE) among them is selected. If none qualify, the lowest CV(RMSE) valid fit is selected and the acceptance check fails on the t-statistic.
+**Model selection.** Among physically valid fits, models whose slopes all have |t| greater than the t threshold are preferred, and among them the one with the lowest Schwarz information criterion is selected, BIC = n ln(SSE / n) + p ln(n) on period totals, with ties going to the model with fewer parameters. If none qualify, the lowest-BIC valid fit is selected and the acceptance check fails on the t-statistic. Version 0.1.0 selected the lowest CV(RMSE) instead. Monte Carlo tests on the synthetic example's data-generating process showed that, because slope t-statistics are conditional on a change point chosen to minimize error, the t screen alone admitted spurious 4P and 5P slopes in about 23 percent of replications and lowered the coverage of the stated uncertainty in those cases; BIC penalizes the added parameters directly.
 
 **Avoided energy use.** Adjusted baseline = model applied to reporting-period temperatures and period lengths. Avoided energy use = adjusted baseline minus metered reporting-period use. This is the FEMP and IPMVP definition; normalized savings are not computed in v0.1.
 
@@ -71,7 +71,7 @@ Change points are searched on a 1 degree grid between the 10th and 90th percenti
 
 FSU = t x 1.26 x CV(RMSE) / F x sqrt((n + 2) / (n x m))
 
-with F the fractional savings, n baseline periods, m reporting periods, and t at n minus p degrees of freedom. Absolute uncertainty = FSU x avoided energy use.
+with F the fractional savings, n baseline periods, m reporting periods, and t at n minus p degrees of freedom. Absolute uncertainty = FSU x avoided energy use = t x 1.26 x CV(RMSE) x adjusted baseline x sqrt((n + 2) / (n x m)). The absolute uncertainty does not depend on the size of the savings and is reported whatever their sign. FSU is reported only when savings are positive; when they are not, the FSU acceptance check fails. Version 0.1.0 reported no uncertainty at all when estimated savings were zero or negative.
 
 **Acceptance criteria.** Configurable in `config/acceptance_criteria.json`, each with its source. FEMP M&V Guidelines v5.0 values are used where FEMP states one:
 

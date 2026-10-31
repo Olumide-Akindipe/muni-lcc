@@ -132,3 +132,40 @@ def test_femp_r2_threshold_is_0_75():
     with open(path, encoding="utf-8") as f:
         c = json.load(f)
     assert c["min_r2"] == 0.75 and c["max_abs_nmbe"] == 0.00005 and c["min_abs_slope_t"] == 2.0
+
+
+def test_uncertainty_defined_when_savings_not_positive():
+    rng = np.random.default_rng(21)
+    base = _periods(TEMPS + TEMPS, heating, noise=rng.normal(0, 25, 24))
+    fit = C.fit_baseline(base)
+    rep = _periods(TEMPS, heating, scale=1.02)   # use rose: negative savings
+    res = C.avoided_energy(fit["model"], base, rep)
+    assert res["avoided_energy"] < 0
+    assert res["fractional_savings_uncertainty"] is None
+    assert res["absolute_uncertainty"] is not None and res["absolute_uncertainty"] > 0
+    acc = C.check_acceptance(res, CRIT)
+    assert not acc["checks"]["fsu"]
+
+
+def test_absolute_uncertainty_independent_of_savings():
+    rng = np.random.default_rng(22)
+    base = _periods(TEMPS + TEMPS, heating, noise=rng.normal(0, 25, 24))
+    m = C.fit_baseline(base)["model"]
+    u = [C.avoided_energy(m, base, _periods(TEMPS, heating, scale=s))["absolute_uncertainty"]
+         for s in (0.7, 0.9, 1.1)]
+    assert u[0] == pytest.approx(u[1]) == pytest.approx(u[2])
+
+
+def test_bic_selects_simpler_model_on_exact_ties():
+    base = _periods(TEMPS + TEMPS, heating)            # noiseless 3PH data
+    fit = C.fit_baseline(base)
+    assert fit["model"].form == "3PH"
+
+
+def test_bic_reported_for_candidates():
+    rng = np.random.default_rng(23)
+    base = _periods(TEMPS + TEMPS, heating, noise=rng.normal(0, 25, 24))
+    fit = C.fit_baseline(base)
+    assert all("bic" in c for c in fit["candidates"])
+    sel = fit["statistics"]["bic"]
+    assert sel == min(c["bic"] for c in fit["candidates"] if c["slopes_significant"])

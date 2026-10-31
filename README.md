@@ -2,7 +2,7 @@
 
 [![tests](https://github.com/Olumide-Akindipe/muni-lcc/actions/workflows/tests.yml/badge.svg)](https://github.com/Olumide-Akindipe/muni-lcc/actions/workflows/tests.yml)
 
-**Status: Released v0.1.0 (14 October 2026). DOI: [10.5281/zenodo.23362541](https://doi.org/10.5281/zenodo.23362541).**
+**Status: Released v0.1.1 (30 October 2026). DOI: [10.5281/zenodo.23362541](https://doi.org/10.5281/zenodo.23362541).**
 
 MUNI-LCC is a free, open toolkit that helps a city, town, village, or school district answer three questions about an energy project: were the intended energy savings achieved, was it a sound investment over its life cycle, and what does the federal performance report need to say about it. This toolkit implements IPMVP Options A and C as defined in the DOE FEMP M&V Guidelines v5.0 (which are based on IPMVP Core Concepts 2022), computes life-cycle cost consistent with ASTM E917, applies these methods the same way every time, shows its work, and produces performance report content aligned with 2 CFR 200.329.
 
@@ -25,11 +25,20 @@ Life-cycle costs can be computed from verified quantities, so the cost-effective
 
 Requires Python 3.9 or later.
 
+To use the toolkit:
+
+```bash
+pip install muni-lcc
+muni-lcc --help
+```
+
+To run the tests and the worked example from source:
+
 ```bash
 git clone https://github.com/Olumide-Akindipe/muni-lcc.git
 cd muni-lcc
 pip install -e ".[test,examples]"
-python -m pytest                      # 33 tests should pass
+python -m pytest                      # 37 tests should pass
 muni-lcc run examples/project.json --out outputs
 muni-lcc due-date 2026-06-30 annual   # prints 2026-09-28
 ```
@@ -68,7 +77,7 @@ MUNI-LCC produces verified content for a performance report. It does not replace
 
 ## Citation
 
-Akindipe, S. O. (2026). *MUNI-LCC: open life-cycle cost and measurement-and-verification toolkit for municipal energy projects* (Version 0.1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23362541
+Akindipe, S. O. (2026). *MUNI-LCC: open life-cycle cost and measurement-and-verification toolkit for municipal energy projects* (Version 0.1.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23362541
 
 See [CITATION.cff](CITATION.cff).
 
